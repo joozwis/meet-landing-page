@@ -1,0 +1,103 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.hero {
+  display: grid;
+  justify-items: center;
+  overflow-x: hidden;
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$space-200;
+  }
+
+  &__content {
+    display: grid;
+    gap: v.$space-300;
+    padding: 0 v.$space-400;
+    max-width: 48rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  &__description {
+    @include m.text-preset-1(1.6rem);
+    color: v.$color-slate-600;
+    font-weight: 700;
+    max-width: 48rem;
+  }
+
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &__media {
+    display: grid;
+    gap: v.$space-600;
+    justify-items: center;
+  }
+
+  &__new-line {
+    display: block;
+  }
+
+  &__second-image {
+    display: none;
+  }
+
+  &__title {
+    @include m.text-preset-1(4rem);
+    color: v.$color-slate-900;
+  }
+}
+
+@include m.tablet {
+  .hero {
+    &__buttons {
+      flex-direction: row;
+    }
+
+    &__title {
+      @include m.text-preset-1(4.8rem);
+    }
+  }
+}
+
+@include m.desktop {
+  .hero {
+    overflow-x: visible;
+
+    &__content {
+      padding: 0;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      gap: v.$space-400;
+      justify-self: center;
+    }
+
+    &__description {
+      @include m.text-preset-1(1.8rem);
+      font-weight: 600;
+      line-height: 150%;
+    }
+
+    &__media {
+      display: grid;
+      gap: v.$space-400;
+      grid-template-columns: auto 1fr auto;
+    }
+
+    &__second-image {
+      display: block;
+      transform: translateY(15%);
+    }
+
+    &__title {
+      @include m.text-preset-1(6.4rem);
+    }
+  }
+}

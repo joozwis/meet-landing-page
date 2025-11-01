@@ -1,0 +1,33 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+//PADDINGS
+
+.padding-top--sm {
+  padding-top: v.$space-600;
+}
+
+.padding-bottom--xs {
+  padding-bottom: v.$space-400;
+}
+
+//MARGINS
+
+.margin-bottom--sm {
+  margin-bottom: v.$space-600;
+}
+.margin-bottom--md {
+  margin-bottom: v.$space-800;
+}
+
+@include m.tablet {
+  .margin-bottom--sm {
+    margin-bottom: v.$space-800;
+  }
+}
+
+@include m.tablet {
+  .padding-top--sm {
+    padding-top: v.$space-1000;
+  }
+}

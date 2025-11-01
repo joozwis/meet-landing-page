@@ -1,0 +1,65 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.features {
+  display: grid;
+  gap: v.$space-800;
+  justify-items: center;
+  padding: 14.4rem v.$space-400 calc(v.$space-800 + 5.2rem);
+  text-align: center;
+
+  &__content {
+    max-width: 48rem;
+  }
+
+  &__label {
+    @include m.text-preset-3(1.2rem);
+    margin-bottom: v.$space-200;
+    color: v.$color-cyan-600;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include m.text-preset-2(3.2rem);
+    color: v.$color-slate-900;
+    margin-bottom: v.$space-400;
+  }
+
+  &__description {
+    @include m.text-preset-4(1.6rem);
+    margin: 0 auto;
+    color: v.$color-slate-600;
+    max-width: 48rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    max-width: fit-content;
+    gap: v.$space-200;
+
+    img {
+      border-radius: v.$radius-8;
+    }
+  }
+}
+
+@include m.tablet {
+  .features {
+    padding: 20rem v.$space-400 calc(v.$space-800 + 5.2rem);
+    gap: v.$space-800;
+
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__label {
+      @include m.text-preset-3(1.6rem);
+    }
+
+    &__title {
+      @include m.text-preset-2(3.6rem);
+    }
+  }
+}

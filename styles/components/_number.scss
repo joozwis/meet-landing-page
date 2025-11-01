@@ -1,0 +1,26 @@
+@use "../mixins" as m;
+@use "../variables" as v;
+
+.number {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include m.text-preset-5(1.6rem);
+  width: 5.6rem;
+  height: 5.6rem;
+  color: v.$color-slate-600;
+  border: 1px solid v.$color-slate-300;
+  border-radius: v.$radius-full;
+  background-color: v.$color-white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8rem;
+    left: 50%;
+    width: 1px;
+    height: 8rem;
+    background-color: v.$color-slate-300;
+  }
+}

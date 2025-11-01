@@ -1,0 +1,23 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.btn {
+  @include m.text-preset-5(1.5rem);
+  padding: v.$space-200 v.$space-500;
+  cursor: pointer;
+  border-radius: 29px;
+  color: v.$color-white;
+
+  &--cyan {
+    background-color: v.$color-cyan-600;
+    &-text {
+      color: v.$color-cyan-300;
+    }
+  }
+  &--purple {
+    background-color: v.$color-purple-600;
+    &-text {
+      color: v.$color-purple-300;
+    }
+  }
+}

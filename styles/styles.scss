@@ -1,0 +1,18 @@
+@use "reset";
+@use "components/hero";
+@use "components/features";
+@use "components/footer";
+@use "utils/spacing";
+@use "components/buttons";
+@use "components/number";
+@use "mixins" as m;
+@use "variables" as v;
+
+.wrapper {
+  width: min(90%, 112rem);
+  margin: 0 auto;
+
+  &--wide {
+    width: min(110%, 144rem);
+  }
+}
